@@ -61,24 +61,24 @@
             <th>項目</th>
             <th>値</th>
             <th></th>
-            <th>計算式</th>
+            <th>計算結果</th>
         </tr>
         <tr>
             <td>わたあめ1個あたりの販売価格（円）</td>
             <td><input type="number" id="pricePerUnit" value="50" oninput="updatePlan()"></td>
-            <td>収支0のための販売個数</td>
+            <td>収支0に必要な販売数</td>
             <td id="zeroSalesNumber">---</td>
         </tr>
         <tr>
             <td>販売個数</td>
             <td><input type="number" id="forecastNumber" value="480" oninput="updatePlan()"></td>
-            <td>収支0のための販売価格</td>
+            <td>収支0に必要な販売価格(単価)</td>
             <td id="zeroSalesPrice">---</td>
         </tr>
         <tr>
             <td>売上</td>
             <td id="revenue">---</td>
-            <td></td>
+            <td>入力値の掛算</td>
             <td></td>
         </tr>
         <tr>
@@ -90,7 +90,7 @@
         <tr>
             <td>利益</td>
             <td id="profit">---</td>
-            <td></td>
+            <td>-3000までセーフ</td>
             <td></td>
         </tr>
     </table>
