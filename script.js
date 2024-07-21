@@ -44,4 +44,40 @@ function saveData() {
     document.cookie = `sugarBlueCost=${sugarBlueCost};path=/`;
     document.cookie = `sugarYellowCost=${sugarYellowCost};path=/`;
     document.cookie = `chopstickCost=${chopstickCost};path=/`;
-    document.cookie
+    document.cookie = `decorationCost=${decorationCost};path=/`;
+    document.cookie = `otherCost=${otherCost};path=/`;
+    document.cookie = `pricePerUnit=${pricePerUnit};path=/`;
+    document.cookie = `forecastNumber=${forecastNumber};path=/`;
+
+    showPopup("データが保存されました。");
+}
+
+function loadData() {
+    const cookies = document.cookie.split(';');
+    const cookieData = {};
+    cookies.forEach(cookie => {
+        const [name, value] = cookie.split('=');
+        cookieData[name.trim()] = value;
+    });
+
+    document.getElementById('machineCost').value = cookieData.machineCost || 0;
+    document.getElementById('sugarWhiteCost').value = cookieData.sugarWhiteCost || 0;
+    document.getElementById('sugarRedCost').value = cookieData.sugarRedCost || 0;
+    document.getElementById('sugarBlueCost').value = cookieData.sugarBlueCost || 0;
+    document.getElementById('sugarYellowCost').value = cookieData.sugarYellowCost || 0;
+    document.getElementById('chopstickCost').value = cookieData.chopstickCost || 0;
+    document.getElementById('decorationCost').value = cookieData.decorationCost || 0;
+    document.getElementById('otherCost').value = cookieData.otherCost || 0;
+    document.getElementById('pricePerUnit').value = cookieData.pricePerUnit || 0;
+    document.getElementById('forecastNumber').value = cookieData.forecastNumber || 0;
+
+    updatePlan();
+    showPopup("データが呼び出されました。");
+}
+
+function showPopup(message) {
+    alert(message);
+}
+
+// 初期計算
+updatePlan();
