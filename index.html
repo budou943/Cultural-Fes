@@ -4,11 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>費用と販売計画</title>
-    <style>
-        table { width: 80%; margin: 20px auto; border-collapse: collapse; }
-        th, td { padding: 10px; border: 1px solid #000; text-align: left; }
-        th { background-color: #f2f2f2; }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h2>費用</h2>
@@ -95,42 +91,10 @@
         </tr>
     </table>
 
-    <script>
-        function updatePlan() {
-            // 各費用項目の値を取得
-            const machineCost = parseInt(document.getElementById('machineCost').value);
-            const sugarWhiteCost = parseInt(document.getElementById('sugarWhiteCost').value);
-            const sugarRedCost = parseInt(document.getElementById('sugarRedCost').value);
-            const sugarBlueCost = parseInt(document.getElementById('sugarBlueCost').value);
-            const sugarYellowCost = parseInt(document.getElementById('sugarYellowCost').value);
-            const chopstickCost = parseInt(document.getElementById('chopstickCost').value);
-            const decorationCost = parseInt(document.getElementById('decorationCost').value);
-            const otherCost = parseInt(document.getElementById('otherCost').value);
+    <button id="saveButton" onclick="saveData()">保存</button>
+    <button id="loadButton" onclick="loadData()">呼び出し</button>
+    <p id="message"></p>
 
-            // 合計費用を計算
-            const totalCost = machineCost + sugarWhiteCost + sugarRedCost + sugarBlueCost + sugarYellowCost + chopstickCost + decorationCost + otherCost;
-            document.getElementById('totalCost').innerText = totalCost;
-            document.getElementById('displayTotalCost').innerText = totalCost;
-
-            // 販売計画の入力値を取得
-            const pricePerUnit = parseFloat(document.getElementById('pricePerUnit').value);
-            const forecastNumber = parseInt(document.getElementById('forecastNumber').value);
-
-            // 収支0のための販売個数と価格を計算
-            const zeroSalesNumber = totalCost / pricePerUnit;
-            const zeroSalesPrice = totalCost / forecastNumber;
-            const revenue = pricePerUnit * forecastNumber;
-            const profit = revenue - totalCost;
-
-            // 計算結果をHTML要素に表示
-            document.getElementById('zeroSalesNumber').innerText = zeroSalesNumber.toFixed(2);
-            document.getElementById('zeroSalesPrice').innerText = zeroSalesPrice.toFixed(2);
-            document.getElementById('revenue').innerText = revenue.toFixed(2);
-            document.getElementById('profit').innerText = profit.toFixed(2);
-        }
-
-        // 初期計算
-        updatePlan();
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
