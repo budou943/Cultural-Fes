@@ -1,0 +1,37 @@
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 10px;
+    border: 1px solid #000;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+}
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+#saveButton {
+    background-color: #4CAF50; /* 緑 */
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+#loadButton {
+    background-color: #008CBA; /* 青 */
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+#message {
+    text-align: center;
+    font-size: 16px;
+    color: red;
+}
